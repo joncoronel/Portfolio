@@ -11,12 +11,15 @@ export default function Navbar() {
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        // if scroll down hide the navbar
-        setShow(false);
-      } else {
-        // if scroll up show the navbar
-        setShow(true);
+      setSmall(window.pageYOffset > 60);
+      if (small) {
+        if (window.scrollY > lastScrollY) {
+          // if scroll down hide the navbar
+          setShow(false);
+        } else {
+          // if scroll up show the navbar
+          setShow(true);
+        }
       }
 
       // remember current page location to use in the next move
@@ -26,10 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () => {
-        setSmall(window.pageYOffset > 1);
-        controlNavbar();
-      });
+      window.addEventListener("scroll", controlNavbar);
       return () => {
         window.removeEventListener("scroll", controlNavbar);
       };

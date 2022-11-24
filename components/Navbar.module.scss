@@ -7,7 +7,7 @@
 
   backdrop-filter: blur(10px);
   padding: 0 1.5rem;
-  transition: 0.3s;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   height: 6rem;
 }
 .nav {
@@ -16,7 +16,6 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  transition: 0.2s;
 }
 
 .container {
@@ -46,7 +45,7 @@
 
 .scrolled {
   box-shadow: 0 10px 30px -10px var(--color-shadow);
-  height: 5rem;
+  height: 4.5rem;
 }
 
 .hidden {
