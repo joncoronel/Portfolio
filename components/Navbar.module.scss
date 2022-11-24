@@ -1,19 +1,22 @@
 .header {
-  top: 0;
-  left: 0;
+  top: 0px;
+  transform: translateY(0px);
   position: fixed;
   width: 100%;
   background-color: var(--color-darkest-transparent);
-  box-shadow: 0 10px 30px -10px var(--color-shadow);
+
   backdrop-filter: blur(10px);
   padding: 0 1.5rem;
+  transition: 0.3s;
+  height: 6rem;
 }
 .nav {
   display: flex;
   width: 100%;
-  height: 4rem;
+  height: 100%;
   align-items: center;
   justify-content: center;
+  transition: 0.2s;
 }
 
 .container {
@@ -39,4 +42,14 @@
 .link {
   list-style: none;
   margin-right: 1.5rem;
+}
+
+.scrolled {
+  box-shadow: 0 10px 30px -10px var(--color-shadow);
+  height: 5rem;
+}
+
+.hidden {
+  transform: translateY(-5rem);
+  box-shadow: none;
 }
