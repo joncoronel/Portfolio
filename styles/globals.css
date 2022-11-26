@@ -1,9 +1,12 @@
 :root {
   --color-lightest: hsl(194, 33%, 56%);
   --color-mid: hsl(200, 37%, 40%);
+  --color-dark: hsl(204, 100%, 14%);
   --color-darkest: hsl(204, 100%, 10%);
+
   --color-darkest-transparent: hsl(204, 100%, 10%, 0.85);
-  --color-shadow: hsla(205, 100%, 5%, 0.7);
+  --overlay-color: hsl(204, 100%, 10%, 0.4);
+  --color-shadow: hsla(205, 100%, 4%, 0.7);
   --color-accent: hsl(337, 90%, 45%);
   --color-accent-2: hsl(171, 64%, 68%);
 }

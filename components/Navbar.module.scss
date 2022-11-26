@@ -19,7 +19,6 @@
 }
 
 .container {
-  //margin: auto;
   height: 100%;
   width: 100%;
   width: 100rem;
@@ -29,8 +28,6 @@
 }
 .content {
   display: flex;
-}
-.logo {
 }
 
 .navLinks {
@@ -51,4 +48,49 @@
 .hidden {
   transform: translateY(-5rem);
   box-shadow: none;
+}
+
+.burger {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .navLinks {
+    background-color: var(--color-dark);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 70vw;
+    transform: translateX(20vw);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 0;
+  }
+
+  .navLinks.open {
+    opacity: 1;
+    transform: translateX(0vw);
+  }
+
+  .overlay {
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: var(--overlay-color);
+    backdrop-filter: blur(9px);
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    pointer-events: none;
+  }
+
+  .overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .burger {
+    display: flex;
+  }
 }

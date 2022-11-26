@@ -1,0 +1,12 @@
+.burger {
+  //color: white;
+  background-color: var(--color-accent);
+}
+
+.burger::before {
+  background-color: var(--color-accent);
+}
+
+.burger::after {
+  background-color: var(--color-accent);
+}
