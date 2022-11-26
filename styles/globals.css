@@ -47,3 +47,25 @@ main {
 [data-nextjs-scroll-focus-boundary] {
   display: contents;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-darkest);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-lightest);
+  border-radius: 8px;
+  border: 3px solid var(--color-darkest);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

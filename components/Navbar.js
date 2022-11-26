@@ -30,6 +30,14 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    if (opened) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [opened]);
+
+  useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
       return () => {
@@ -37,6 +45,7 @@ export default function Navbar() {
       };
     }
   }, [lastScrollY]);
+
   return (
     <>
       <div
