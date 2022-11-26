@@ -1,4 +1,3 @@
-"use client";
 import Space from "../components/sections/space";
 import classes from "../styles/Home.module.scss";
 

@@ -7,7 +7,6 @@ export default function burger(props) {
   return (
     <Burger
       opened={props.opened}
-      onClick={() => props.setOpened((o) => !o)}
       title={title}
       classNames={{ burger: `${classes.burger}` }}
       size={30}

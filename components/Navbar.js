@@ -74,7 +74,10 @@ export default function Navbar() {
                   <Link href="/">Contact</Link>
                 </li>
               </ul>
-              <div className={classes.burger}>
+              <div
+                onClick={() => setOpened(!opened)}
+                className={classes.burger}
+              >
                 <Burger opened={opened} setOpened={setOpened} />
               </div>
             </div>
