@@ -1,4 +1,5 @@
-import Navbar from "../components/Navbar";
+
+import Nav from "../components/Nav";
 import "../styles/globals.css";
 import RootStyleRegistry from "./emotion";
 
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
 
       <body>
         <RootStyleRegistry>
-          <Navbar />
+          <Nav />
           <main>{children}</main>
         </RootStyleRegistry>
       </body>
