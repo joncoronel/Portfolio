@@ -48,6 +48,7 @@
 }
 
 .navLinks {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,14 +91,20 @@
     align-items: center;
   }
 
+  .navLinks.open::before {
+    content: " ";
+    position: absolute;
+    background-color: var(--color-lightester);
+    height: 4px;
+    border-radius: 10px;
+
+    top: calc(1rem - 2px);
+    width: 90%;
+    //border-top: 4px solid var(--color-accent);
+  }
+
   .container.open {
     height: 20.25rem;
-    .break {
-      height: 0.2rem;
-      background-color: var(--color-accent);
-      border-radius: 15px;
-      opacity: 1;
-    }
   }
 
   .overlay {
@@ -127,8 +134,6 @@
 
   .break {
     display: flex;
-    opacity: 0;
-    transition: 0.2s;
   }
   .segment {
     display: flex;

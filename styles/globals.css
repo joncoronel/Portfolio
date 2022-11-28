@@ -1,5 +1,5 @@
 :root {
-  --color-lightester: hsl(194, 33%, 70%);
+  --color-lightester: hsl(194, 33%, 78%);
   --color-lightest: hsl(194, 33%, 56%);
   --color-lightest-trans: hsl(194, 33%, 56%, 0.85);
   --color-mid: hsl(200, 37%, 40%);
@@ -25,12 +25,13 @@ button {
   margin: 0;
   font-family: var(--font-arima), sans-serif;
   color: white;
+  
 }
 
 h1 {
   font-family: 700;
 
--decoration: none;
+  -decoration: none;
 }
 
 main {

@@ -9,7 +9,7 @@ export default function burger(props) {
       opened={props.opened}
       title={title}
       classNames={{ burger: `${classes.burger}` }}
-      size={20}
+      size={25}
     />
   );
 }

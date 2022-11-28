@@ -5,12 +5,13 @@
   left: 0;
   right: 0;
   height: 100%;
-  background: var(--color-accent);
+  background: var(--color-accent-2);
   z-index: -1;
   box-shadow: var(--color-shadow) 0px 4px 16px 0px;
 }
 
 .link {
+  position: relative;
   height: 3rem;
   width: 5rem;
   font-size: 1.1rem;
@@ -30,11 +31,15 @@
 }
 
 .link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-2);
 }
 
 .activeTab {
-  color: var(--color-darkest);
+  color: var(--color-dark);
+}
+.activeTab .linkButton {
+  font-weight: 700;
+  //text-shadow: rgba(62, 66, 66, 0.9) 3px 1px 8px;
 }
 
 .link.activeTab:hover {
@@ -57,11 +62,30 @@
   font-weight: 600;
 }
 
+@media only screen and (min-width: 801px) {
+  .link:not(:last-child):after {
+    content: " ";
+    position: absolute;
+    right: calc(-1rem - 1px);
+
+    height: 2rem;
+    border-right: 2px solid var(--color-lightester);
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .link {
     width: 60%;
   }
   .linkButton {
     font-size: 1.3rem;
+  }
+  .link:not(:last-child):after {
+    content: " ";
+    position: absolute;
+    //left: 0;
+    bottom: calc(-1rem - 1px);
+    width: 2rem;
+    border-bottom: 1px solid var(--color-lightester);
   }
 }
