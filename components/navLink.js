@@ -2,7 +2,7 @@ import styles from "./navLink.module.scss";
 import { m } from "framer-motion";
 import { useMediaQuery } from "@mantine/hooks";
 
-export default function navLink(props) {
+export default function Navlink(props) {
   let variantsItem = {};
 
   const matches = useMediaQuery("(max-width: 800px)", true, {
