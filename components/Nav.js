@@ -7,6 +7,8 @@ import Burger from "./misc/burger";
 
 import { LazyMotion, m } from "framer-motion";
 
+import Navlink from "./navLink";
+
 const loadFeatures = () =>
   import("./misc/features.js").then((res) => res.default);
 
@@ -54,6 +56,32 @@ export default function Navbar() {
 
   const navList = ["about", "work", "contact"];
 
+  const variants = {
+    open: {
+      opacity: 1,
+      y: "40%",
+      transition: {
+        y: { stiffness: 230, type: "spring" },
+      },
+    },
+    closed: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        y: { stiffness: 200, type: "spring" },
+      },
+    },
+  };
+
+  const variantsList = {
+    open: {
+      transition: { staggerChildren: 0.07, delayChildren: 0.1 },
+    },
+    closed: {
+      transition: { staggerChildren: 0, staggerDirection: -1 },
+    },
+  };
+
   return (
     <>
       <div
@@ -65,40 +93,37 @@ export default function Navbar() {
           small ? styles.scrolled : ""
         }`}
       >
-        <nav className={`${styles.container} ${opened ? styles.open : ""}`}>
-          <div className={styles.content}>
-            <a className={styles.logo}>Logo</a>
-            <div onClick={() => setOpened(!opened)} className={styles.burger}>
-              <Burger opened={opened} setOpened={setOpened} />
-            </div>
-            <div className={styles.break}></div>
+        <LazyMotion features={loadFeatures}>
+          <m.nav
+            animate={opened ? "open" : "closed"}
+            variants={variants}
+            className={`${styles.container} ${opened ? styles.open : ""}`}
+          >
+            <div className={styles.content}>
+              <a className={styles.logo}>Logo</a>
+              <div onClick={() => setOpened(!opened)} className={styles.burger}>
+                <Burger opened={opened} setOpened={setOpened} />
+              </div>
+              <div className={styles.break}></div>
 
-            <ul className={`${styles.navLinks} ${opened ? styles.open : ""}`}>
-              <LazyMotion features={loadFeatures}>
+              <m.ul
+                variants={variantsList}
+                className={`${styles.navLinks} ${opened ? styles.open : ""}`}
+              >
                 {navList.map((link) => (
-                  <li
+                  <Navlink
                     key={link}
-                    onClick={() => {
-                      setTab(link);
-                      setOpened(false);
-                    }}
-                    className={`${styles.link} ${
-                      tab === link ? styles.activeTab : ""
-                    } `}
-                  >
-                    {link}
-                    {tab === link ? (
-                      <m.div
-                        className={styles.underline}
-                        layoutId="underline"
-                      />
-                    ) : null}
-                  </li>
+                    tab={tab}
+                    link={link}
+                    setTab={setTab}
+                    setOpened={setOpened}
+                    opened={opened}
+                  />
                 ))}
-              </LazyMotion>
-            </ul>
-          </div>
-        </nav>
+              </m.ul>
+            </div>
+          </m.nav>
+        </LazyMotion>
       </header>
     </>
   );

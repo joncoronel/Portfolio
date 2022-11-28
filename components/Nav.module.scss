@@ -36,7 +36,8 @@
   border-radius: 28px;
   //height: 4rem;
   overflow: hidden;
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: height 0.2s;
+  //transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .content {
   display: flex;
