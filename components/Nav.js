@@ -61,7 +61,7 @@ export default function Navbar() {
       opacity: 1,
       y: "40%",
       transition: {
-        y: { stiffness: 230, type: "spring" },
+        y: { stiffness: 250, type: "spring" },
       },
     },
     closed: {
