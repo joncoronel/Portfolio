@@ -29,21 +29,17 @@ export default function Navlink(props) {
   }
   return (
     <m.li
+      onClick={() => {
+        props.setTab(props.link);
+        props.setOpened(false);
+      }}
       variants={variantsItem}
       whileTap={{ scale: 0.95 }}
       className={`${styles.link} ${
         props.tab === props.link ? styles.activeTab : ""
       } `}
     >
-      <button
-        onClick={() => {
-          props.setTab(props.link);
-          props.setOpened(false);
-        }}
-        className={styles.linkButton}
-      >
-        {props.link}
-      </button>
+      <button className={styles.linkButton}>{props.link}</button>
       {props.tab === props.link && props.opened ? (
         <m.div
           key={"mobile"}
@@ -56,6 +52,7 @@ export default function Navlink(props) {
           key={"desktop"}
           className={styles.underline}
           layoutId="underline"
+          transition={{ type: "spring", bounce: 0.45, duration: 0.25 }}
         />
       ) : null}
     </m.li>

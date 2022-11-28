@@ -1,4 +1,5 @@
 :root {
+  --color-lightester: hsl(194, 33%, 70%);
   --color-lightest: hsl(194, 33%, 56%);
   --color-lightest-trans: hsl(194, 33%, 56%, 0.85);
   --color-mid: hsl(200, 37%, 40%);
@@ -17,18 +18,19 @@
 }
 
 html,
-body {
+body,
+button {
   background-color: var(--color-darkest);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-arima), sans-serif;
   color: white;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+h1 {
+  font-family: 700;
+
+-decoration: none;
 }
 
 main {

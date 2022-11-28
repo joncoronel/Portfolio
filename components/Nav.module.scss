@@ -11,17 +11,6 @@
   transition: 0.2s;
 }
 
-.underline {
-  position: absolute;
-  border-radius: 18px;
-  //bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: var(--color-accent);
-  z-index: -1;
-}
-
 .container {
   height: 4rem;
   display: flex;
@@ -65,20 +54,6 @@
   gap: 2rem;
 }
 
-.link {
-  height: 3rem;
-  width: 5rem;
-
-  border-radius: 10px;
-  position: relative;
-  display: flex;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.7rem;
-  //z-index: 3;
-}
-
 .scrolled {
 }
 
@@ -94,14 +69,6 @@
   //background-color: red;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  //width: 100%;
-  position: relative;
-}
-
 @media only screen and (max-width: 800px) {
   .container {
     align-items: flex-start;
@@ -115,22 +82,22 @@
   }
   .navLinks {
     padding-top: 2rem;
+    padding-bottom: 1.25rem;
     flex-direction: column;
     height: auto;
     overflow: hidden;
     width: 100%;
     align-items: center;
   }
-  .links {
-    width: 100%;
-  }
-
-  .link {
-    width: 60%;
-  }
 
   .container.open {
     height: 20.25rem;
+    .break {
+      height: 0.2rem;
+      background-color: var(--color-accent);
+      border-radius: 15px;
+      opacity: 1;
+    }
   }
 
   .overlay {
@@ -160,6 +127,8 @@
 
   .break {
     display: flex;
+    opacity: 0;
+    transition: 0.2s;
   }
   .segment {
     display: flex;
