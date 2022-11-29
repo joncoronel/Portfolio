@@ -15,7 +15,7 @@ export default function Navlink(props) {
         y: 0,
         opacity: 1,
         transition: {
-          y: { stiffness: 1000, velocity: -100 },
+          y: { stiffness: 1000, velocity: -100, duration: 0.18 },
         },
       },
       closed: {

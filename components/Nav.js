@@ -60,22 +60,16 @@ export default function Navbar() {
     open: {
       opacity: 1,
       y: "40%",
-      transition: {
-        y: { stiffness: 250, type: "spring" },
-      },
     },
     closed: {
       opacity: 1,
       y: 0,
-      transition: {
-        y: { stiffness: 200, type: "spring" },
-      },
     },
   };
 
   const variantsList = {
     open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.1 },
+      transition: { staggerChildren: 0.05, delayChildren: 0 },
     },
     closed: {
       transition: { staggerChildren: 0, staggerDirection: -1 },
