@@ -3,14 +3,14 @@
 import styles from "./Nav.module.scss";
 
 import { useEffect, useState } from "react";
-import Burger from "./misc/burger";
+import Burger from "../misc/burger";
 
 import { LazyMotion, m } from "framer-motion";
 
 import Navlink from "./navLink";
 
 const loadFeatures = () =>
-  import("./misc/features.js").then((res) => res.default);
+  import("../misc/features.js").then((res) => res.default);
 
 export default function Navbar() {
   const [tab, setTab] = useState("about");

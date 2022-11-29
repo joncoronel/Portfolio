@@ -1,4 +1,4 @@
-import Nav from "../components/Nav";
+import Nav from "../components/Navigation/Nav";
 import "../styles/globals.css";
 import RootStyleRegistry from "./emotion";
 import { Arima } from "@next/font/google";
