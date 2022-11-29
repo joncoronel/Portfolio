@@ -2,7 +2,6 @@ import styles from "./navLink.module.scss";
 import { m } from "framer-motion";
 import { useMediaQuery } from "@mantine/hooks";
 import { Link } from "react-scroll";
-
 import { useEffect } from "react";
 import throttle from "lodash.throttle";
 
@@ -36,7 +35,7 @@ export default function Navlink(props) {
     if (props.tab !== link) {
       //console.log(link);
       props.setTab(link);
-      props.setShow(true);
+      //props.setShow(true);
     } else {
       //console.log("attempted");
       return;

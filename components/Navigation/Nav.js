@@ -16,7 +16,7 @@ export default function Navbar() {
   const [tab, setTab] = useState("");
   const [small, setSmall] = useState(false);
   const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+
   const [opened, setOpened] = useState(false);
 
   useEffect(() => {
@@ -26,34 +26,6 @@ export default function Navbar() {
       document.body.style.overflow = "auto";
     }
   }, [opened]);
-
-  useEffect(() => {
-    const controlNavbar = () => {
-      if (typeof window !== "undefined") {
-        console.log("print");
-        var currentScrollPos = window.pageYOffset;
-
-        if (currentScrollPos > prevScrollpos) {
-          // if scroll down hide the navbar
-          setShow(false);
-        } else {
-          // if scroll up show the navbar
-          setShow(true);
-        }
-        prevScrollpos = currentScrollPos;
-
-        // remember current page location to use in the next move
-      }
-    };
-
-    if (typeof window !== "undefined") {
-      var prevScrollpos = window.pageYOffset;
-      window.addEventListener("scroll", controlNavbar);
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
 
   const navList = ["about", "work", "contact"];
 
