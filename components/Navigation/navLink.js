@@ -36,6 +36,7 @@ export default function Navlink(props) {
     if (props.tab !== link) {
       //console.log(link);
       props.setTab(link);
+      props.setShow(true);
     } else {
       //console.log("attempted");
       return;
@@ -98,6 +99,7 @@ export default function Navlink(props) {
             key={"desktop"}
             className={styles.underline}
             layoutId="underline"
+            transition={{ type: "spring", bounce: 0.45, duration: 0.25 }}
           />
         ) : null}
       </Link>

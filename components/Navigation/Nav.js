@@ -19,24 +19,6 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [opened, setOpened] = useState(false);
 
-  const controlNavbar = () => {
-    if (typeof window !== "undefined") {
-      setSmall(window.pageYOffset > 0);
-      if (small) {
-        if (window.scrollY > lastScrollY) {
-          // if scroll down hide the navbar
-          setShow(false);
-        } else {
-          // if scroll up show the navbar
-          setShow(true);
-        }
-      }
-
-      // remember current page location to use in the next move
-      setLastScrollY(window.scrollY);
-    }
-  };
-
   useEffect(() => {
     if (opened) {
       document.body.style.overflow = "hidden";
@@ -46,7 +28,26 @@ export default function Navbar() {
   }, [opened]);
 
   useEffect(() => {
+    const controlNavbar = () => {
+      if (typeof window !== "undefined") {
+        console.log("print");
+        var currentScrollPos = window.pageYOffset;
+
+        if (currentScrollPos > prevScrollpos) {
+          // if scroll down hide the navbar
+          setShow(false);
+        } else {
+          // if scroll up show the navbar
+          setShow(true);
+        }
+        prevScrollpos = currentScrollPos;
+
+        // remember current page location to use in the next move
+      }
+    };
+
     if (typeof window !== "undefined") {
+      var prevScrollpos = window.pageYOffset;
       window.addEventListener("scroll", controlNavbar);
       return () => {
         window.removeEventListener("scroll", controlNavbar);
@@ -112,6 +113,7 @@ export default function Navbar() {
                     setTab={setTab}
                     setOpened={setOpened}
                     opened={opened}
+                    setShow={setShow}
                   />
                 ))}
               </m.ul>
