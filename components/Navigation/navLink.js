@@ -1,6 +1,8 @@
 import styles from "./navLink.module.scss";
 import { m } from "framer-motion";
 import { useMediaQuery } from "@mantine/hooks";
+import { Link } from "react-scroll";
+//import { debounce } from "lodash";
 
 export default function Navlink(props) {
   let variantsItem = {};
@@ -27,34 +29,60 @@ export default function Navlink(props) {
       },
     };
   }
+
+  const change = (link) => {
+    if (props.tab !== link) {
+      console.log(link);
+      props.setTab(link);
+    } else {
+      console.log("attempted");
+      return;
+    }
+  };
+
+  /*const debouncedSearch = debounce(async (link) => {
+    change(link);
+  }, 0); */
+
   return (
     <m.li
-      onClick={() => {
-        props.setTab(props.link);
-        props.setOpened(false);
-      }}
       variants={variantsItem}
       whileTap={{ scale: 0.95 }}
-      className={`${styles.link} ${
-        props.tab === props.link ? styles.activeTab : ""
-      } `}
+      className={styles.link}
     >
-      <button className={styles.linkButton}>{props.link}</button>
-      {props.tab === props.link && props.opened ? (
-        <m.div
-          key={"mobile"}
-          className={styles.underline}
-          layoutId="underline"
-        />
-      ) : null}
-      {props.tab === props.link && !props.opened && !matches ? (
-        <m.div
-          key={"desktop"}
-          className={styles.underline}
-          layoutId="underline"
-          transition={{ type: "spring", bounce: 0.45, duration: 0.25 }}
-        />
-      ) : null}
+      <Link
+        to={props.link}
+        onSetActive={() => {
+          change(props.link);
+        }}
+        onClick={() => {
+          props.setOpened(false);
+        }}
+        className={`${styles.linkButton} ${
+          props.link === props.tab ? styles.activeTab : ""
+        }`}
+        spy={true}
+        smooth={true}
+        offset={-80}
+        duration={0}
+        ignoreCancelEvents={true}
+      >
+        {props.link}
+        {props.tab === props.link && props.opened ? (
+          <m.div
+            key={"mobile"}
+            className={styles.underline}
+            layoutId="underline"
+          />
+        ) : null}
+        {props.tab === props.link && !props.opened && !matches ? (
+          <m.div
+            key={"desktop"}
+            className={styles.underline}
+            layoutId="underline"
+          />
+        ) : null}
+      </Link>
     </m.li>
   );
 }

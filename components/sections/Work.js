@@ -2,7 +2,7 @@ import styles from "./Work.module.scss";
 
 export default function Work() {
   return (
-    <section className={styles.work}>
+    <section id={"work"} className={styles.work}>
       <h1>Work Section</h1>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nec odio
       placerat, mattis lorem non, ullamcorper justo. Phasellus eget iaculis

@@ -25,7 +25,6 @@ button {
   margin: 0;
   font-family: var(--font-arima), sans-serif;
   color: white;
-  
 }
 
 h1 {
@@ -36,6 +35,10 @@ h1 {
 
 main {
   margin-top: 7rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 *,

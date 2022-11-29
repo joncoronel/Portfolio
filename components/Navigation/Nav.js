@@ -13,7 +13,7 @@ const loadFeatures = () =>
   import("../misc/features.js").then((res) => res.default);
 
 export default function Navbar() {
-  const [tab, setTab] = useState("about");
+  const [tab, setTab] = useState("");
   const [small, setSmall] = useState(false);
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
