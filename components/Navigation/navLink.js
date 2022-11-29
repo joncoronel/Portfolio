@@ -2,7 +2,9 @@ import styles from "./navLink.module.scss";
 import { m } from "framer-motion";
 import { useMediaQuery } from "@mantine/hooks";
 import { Link } from "react-scroll";
-//import { debounce } from "lodash";
+
+import { useEffect } from "react";
+import throttle from "lodash.throttle";
 
 export default function Navlink(props) {
   let variantsItem = {};
@@ -32,17 +34,36 @@ export default function Navlink(props) {
 
   const change = (link) => {
     if (props.tab !== link) {
-      console.log(link);
+      //console.log(link);
       props.setTab(link);
     } else {
-      console.log("attempted");
+      //console.log("attempted");
       return;
     }
   };
 
-  /*const debouncedSearch = debounce(async (link) => {
-    change(link);
-  }, 0); */
+  useEffect(() => {
+    const activate = () => {
+      var current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 100) {
+          current = section.getAttribute("id");
+        }
+      });
+      //console.log(current);
+      change(current);
+    };
+    const sections = document.querySelectorAll("section");
+    const throttledCount = throttle(activate, 100);
+    //window.addEventListener("scroll", throttledCount);
+    //return () => window.removeEventListener("scroll", throttledCount);
+
+    window.onscroll = () => {
+      throttledCount();
+    };
+  }, [props.tab]);
 
   return (
     <m.li
@@ -52,9 +73,6 @@ export default function Navlink(props) {
     >
       <Link
         to={props.link}
-        onSetActive={() => {
-          change(props.link);
-        }}
         onClick={() => {
           props.setOpened(false);
         }}
@@ -64,7 +82,7 @@ export default function Navlink(props) {
         spy={true}
         smooth={true}
         offset={-80}
-        duration={0}
+        duration={300}
         ignoreCancelEvents={true}
       >
         {props.link}

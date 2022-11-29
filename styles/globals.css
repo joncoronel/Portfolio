@@ -37,9 +37,7 @@ main {
   margin-top: 7rem;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 *,
 *::before,
