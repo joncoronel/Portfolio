@@ -9,7 +9,7 @@ import { LazyMotion, m } from "framer-motion";
 
 import Navlink from "./navLink";
 import Image from "next/image";
-import Logo from "../../images/logo.svg";
+import Logo from "../../Images/logo.svg";
 
 const loadFeatures = () =>
   import("../misc/features.js").then((res) => res.default);
