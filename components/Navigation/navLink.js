@@ -57,6 +57,7 @@ export default function Navlink(props) {
     };
     const sections = document.querySelectorAll("section");
     const throttledCount = throttle(activate, 100);
+    throttledCount();
     //window.addEventListener("scroll", throttledCount);
     //return () => window.removeEventListener("scroll", throttledCount);
 

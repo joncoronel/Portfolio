@@ -37,8 +37,16 @@
 }
 
 .logo {
-  display: grid;
-  place-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.7rem;
+  width: 5rem;
+}
+
+.logo img {
+  width: auto;
 }
 
 .break {
@@ -79,7 +87,7 @@
     flex-wrap: wrap;
   }
   .logo {
-    height: 2.5rem;
+    height: 2.57rem;
   }
   .navLinks {
     padding-top: 2rem;

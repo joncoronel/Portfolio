@@ -8,6 +8,8 @@ import Burger from "../misc/burger";
 import { LazyMotion, m } from "framer-motion";
 
 import Navlink from "./navLink";
+import Image from "next/image";
+import Logo from "../../images/logo.svg";
 
 const loadFeatures = () =>
   import("../misc/features.js").then((res) => res.default);
@@ -67,7 +69,9 @@ export default function Navbar() {
             className={`${styles.container} ${opened ? styles.open : ""}`}
           >
             <div className={styles.content}>
-              <a className={styles.logo}>Logo</a>
+              <a className={styles.logo}>
+                <Image priority="true" alt="Website Logo" src={Logo} fill />
+              </a>
               <div onClick={() => setOpened(!opened)} className={styles.burger}>
                 <Burger opened={opened} setOpened={setOpened} />
               </div>
