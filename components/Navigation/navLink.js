@@ -48,7 +48,7 @@ export default function Navlink(props) {
 
       sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 100) {
+        if (scrollY >= sectionTop - 200) {
           current = section.getAttribute("id");
         }
       });

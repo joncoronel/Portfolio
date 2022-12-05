@@ -70,7 +70,13 @@ export default function Navbar() {
           >
             <div className={styles.content}>
               <a className={styles.logo}>
-                <Image priority="true" alt="Website Logo" src={Logo} fill />
+                <Image
+                  priority="true"
+                  alt="Website Logo"
+                  src={Logo}
+                  fill={true}
+                  sizes="(max-width: 768px) 1vw, (max-width: 1200px) 1vw, 1vw"
+                />
               </a>
               <div onClick={() => setOpened(!opened)} className={styles.burger}>
                 <Burger opened={opened} setOpened={setOpened} />
