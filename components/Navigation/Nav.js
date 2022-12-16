@@ -9,7 +9,7 @@ import { LazyMotion, m } from "framer-motion";
 
 import Navlink from "./navLink";
 import Image from "next/image";
-import Logo from "../../Images/logo.svg";
+import Logo from "../../Images/logofinal.svg";
 
 const loadFeatures = () =>
   import("../misc/features.js").then((res) => res.default);
@@ -71,11 +71,11 @@ export default function Navbar() {
             <div className={styles.content}>
               <a className={styles.logo}>
                 <Image
+                  className={styles.logoDirect}
                   priority="true"
                   alt="Website Logo"
                   src={Logo}
-                  fill={true}
-                  sizes="(max-width: 768px) 1vw, (max-width: 1200px) 1vw, 1vw"
+                  fill
                 />
               </a>
               <div onClick={() => setOpened(!opened)} className={styles.burger}>
