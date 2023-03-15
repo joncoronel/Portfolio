@@ -2,6 +2,24 @@
   //margin: auto;
   //margin-top: var(--spacer, 2rem);
   //max-width: 90rem;
-  padding: 1rem;
+  //padding: 1rem 0rem;
+  max-width: 63rem;
+  margin: 0px auto;
   //scroll-margin-top: 4rem;
+
+  //max-width: 30rem;
+}
+
+.spacing {
+  width: 100%;
+  max-width: 100rem;
+  margin: auto;
+  padding: 0rem 9rem;
+  height: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .spacing {
+    padding: 0rem 1.5rem;
+  }
 }
