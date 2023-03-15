@@ -60,11 +60,9 @@ export default function Navbar() {
 
   const variants = {
     open: {
-      opacity: 1,
       y: "40%",
     },
     closed: {
-      opacity: 1,
       y: 0,
     },
   };
@@ -84,11 +82,13 @@ export default function Navbar() {
         onClick={() => setOpened(!opened)}
         className={`${styles.overlay} ${opened ? styles.open : ""}`}
       ></div>
-      <header className={`${styles.header} ${!show ? styles.hidden : ""} `}>
-        <LazyMotion features={loadFeatures}>
-          <m.nav
-            animate={opened ? "open" : "closed"}
-            variants={variants}
+      <LazyMotion features={loadFeatures}>
+        <m.header
+          animate={opened ? "open" : "closed"}
+          variants={variants}
+          className={`${styles.header} ${!show ? styles.hidden : ""} `}
+        >
+          <nav
             className={`${styles.container} ${opened ? styles.open : ""} ${
               small ? styles.scrolled : ""
             }`}
@@ -125,9 +125,9 @@ export default function Navbar() {
                 ))}
               </m.ul>
             </div>
-          </m.nav>
-        </LazyMotion>
-      </header>
+          </nav>
+        </m.header>
+      </LazyMotion>
     </>
   );
 }
