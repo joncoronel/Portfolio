@@ -24,7 +24,9 @@
   border-radius: 28px;
   //height: 4rem;
   overflow: hidden;
-  transition: height 0.2s, background-color 0.2s, max-width .2s ease-in-out, padding 0.2s;
+  transition: height 0.2s, background-color 0.2s, max-width 0.2s ease-in-out,
+    padding 0.2s;
+  will-change: transform;
   //transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   //transition: background-color 0.2s box-shadow 0.2s backdrop-filter 0.2s;
 }
