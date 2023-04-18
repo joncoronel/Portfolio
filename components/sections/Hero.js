@@ -7,7 +7,7 @@ export default function Hero() {
       <div className={styles.name}>Jonathan Coronel</div>
       <div className={styles.phrase}>I build things some may find useful</div>
       <div className={styles.desc}>
-        I’m a software engineer specializing in building (and occasionally
+        I’m hha software engineer specializing in building (and occasionally
         designing) exceptional digital experiences. Currently, I’m focused on
         building accessible, human-centered products at Upstatement.
       </div>
