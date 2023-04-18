@@ -8,7 +8,7 @@ export default function Hero() {
       <div className={styles.phrase}>I build things some may find useful</div>
       <div className={styles.desc}>
         I’m hha software engineer specializing in building (and occasionally
-        designing) exceptional digital experiences. Currently, I’m focused on
+        designgging) exceptional digital experiences. Currently, I’m focused on
         building accessible, human-centered products at Upstatement.
       </div>
       <button className={styles.button28}>Contact Me</button>
